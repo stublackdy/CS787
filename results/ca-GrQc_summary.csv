@@ -1,0 +1,7 @@
+algorithm,graph_family,graph_size,graph_parameters,heap_type,row_count,mean_comparison_count,mean_cut_count,mean_decrease_key_per_extract,mean_edge_scan_per_extract,mean_link_count,mean_meld_count,mean_peak_heap_size,mean_successful_decrease_key_rate,mean_successful_relax_rate,mean_swap_count
+dijkstra,snap_ca-GrQc,4158,"dataset=ca-GrQc,component=largest,max_edges=50000",binary,30,84040.53333333334,0.0,0.5359628026294693,6.455988455988459,0.0,0.0,1499.4333333333334,1.0,0.47575125415983704,39015.9
+dijkstra,snap_ca-GrQc,4158,"dataset=ca-GrQc,component=largest,max_edges=50000",fibonacci,30,99587.56666666667,858.6,0.5359628026294693,6.455988455988459,35241.666666666664,0.0,1499.4333333333334,1.0,0.47575125415983704,0.0
+dijkstra,snap_ca-GrQc,4158,"dataset=ca-GrQc,component=largest,max_edges=50000",pairing,30,67671.8,2228.3,0.5359628026294693,6.455988455988459,65443.26666666667,65443.26666666667,1499.4333333333334,1.0,0.47575125415983704,0.0
+prim,snap_ca-GrQc,4158,"dataset=ca-GrQc,component=largest,max_edges=50000",binary,10,101270.3,0.0,0.7733525733525735,6.4559884559884555,0.0,0.0,1457.1,1.0,,55748.5
+prim,snap_ca-GrQc,4158,"dataset=ca-GrQc,component=largest,max_edges=50000",fibonacci,10,75454.2,1929.7,0.7733525733525735,6.4559884559884555,22022.0,0.0,1457.1,1.0,,0.0
+prim,snap_ca-GrQc,4158,"dataset=ca-GrQc,component=largest,max_edges=50000",pairing,10,44965.2,3159.2,0.7733525733525735,6.4559884559884555,41749.6,41749.6,1457.1,1.0,,0.0

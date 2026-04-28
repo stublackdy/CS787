@@ -1,0 +1,7 @@
+algorithm,graph_family,graph_size,graph_parameters,heap_type,row_count,mean_comparison_count,mean_cut_count,mean_decrease_key_per_extract,mean_edge_scan_per_extract,mean_link_count,mean_meld_count,mean_peak_heap_size,mean_successful_decrease_key_rate,mean_successful_relax_rate,mean_swap_count
+dijkstra,snap_roadNet-CA,11183,"dataset=roadNet-CA,component=largest,max_edges=50000",binary,30,170680.26666666666,0.0,0.22400071537154603,3.1968165966198687,0.0,0.0,339.03333333333336,1.0,0.7657062937062938,78246.66666666667
+dijkstra,snap_roadNet-CA,11183,"dataset=roadNet-CA,component=largest,max_edges=50000",fibonacci,30,202682.33333333334,1009.2666666666667,0.22400071537154603,3.1968165966198687,73371.06666666667,0.0,339.03333333333336,1.0,0.7657062937062938,0.0
+dijkstra,snap_roadNet-CA,11183,"dataset=roadNet-CA,component=largest,max_edges=50000",pairing,30,138921.43333333332,2504.8,0.22400071537154603,3.1968165966198687,136416.43333333332,136416.43333333332,339.03333333333336,1.0,0.7657062937062938,0.0
+prim,snap_roadNet-CA,11183,"dataset=roadNet-CA,component=largest,max_edges=50000",binary,10,276402.8,0.0,0.4214074935169454,3.196816596619869,0.0,0.0,1125.7,1.0,,168789.4
+prim,snap_roadNet-CA,11183,"dataset=roadNet-CA,component=largest,max_edges=50000",fibonacci,10,126259.9,3435.1,0.4214074935169454,3.196816596619869,27501.1,0.0,1125.7,1.0,,0.0
+prim,snap_roadNet-CA,11183,"dataset=roadNet-CA,component=largest,max_edges=50000",pairing,10,58445.1,4547.3,0.4214074935169454,3.196816596619869,53732.5,53732.5,1125.7,1.0,,0.0
