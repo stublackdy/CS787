@@ -319,7 +319,67 @@ Python synthetic experiments do not include stress graphs. C++ synthetic experim
 - `dijkstra_decrease_key_stress`
 - `prim_decrease_key_stress`
 
-The stress graphs are used only for C++ extreme-case performance testing.
+The stress graphs are used only for C++ extreme-case performance testing. They are designed to create decrease-key-heavy workloads, where many target vertices receive repeated key improvements. This setting is intended to highlight cases where Fibonacci heap and Pairing heap can be advantageous because their decrease-key operations avoid the long upward movement that an array-based binary heap may perform.
+
+`dijkstra_decrease_key_stress` is a directed weighted graph:
+
+```text
+Input: k improver vertices, r target vertices
+Vertices:
+  source s
+  improvers a_1 ... a_k
+  targets t_1 ... t_r
+
+C = r + 1
+B = k*C + r + k + 1
+
+rank_i(j):
+  if i is odd:  rank_i(j) = j
+  if i is even: rank_i(j) = r + 1 - j
+
+Edges:
+  for i in 1..k:
+    add directed edge s -> a_i with weight i
+
+  for j in 1..r:
+    add directed edge s -> t_j with weight B + j
+
+  for i in 1..k:
+    for j in 1..r:
+      add directed edge a_i -> t_j
+      with weight (B - i*C + rank_i(j)) - i
+```
+
+`prim_decrease_key_stress` is an undirected weighted graph:
+
+```text
+Input: k improver vertices, r target vertices
+Vertices:
+  source s
+  improvers a_1 ... a_k
+  targets t_1 ... t_r
+
+C = r + 1
+B = k*C + r + k + 1
+
+rank_i(j):
+  if i is odd:  rank_i(j) = j
+  if i is even: rank_i(j) = r + 1 - j
+
+Edges:
+  for i in 1..k:
+    add undirected edge s -- a_i with weight i
+
+  for j in 1..r:
+    add undirected edge s -- t_j with weight B + j
+
+  for i in 1..k:
+    for j in 1..r:
+      add undirected edge a_i -- t_j
+      with weight B - i*C + rank_i(j)
+```
+
+The alternating rank order reverses the relative target order across improver rounds. This makes binary heap decrease-key operations more likely to move elements upward by larger distances, while Pairing heap and Fibonacci heap rely on cut/meld style behavior that is less tied to array movement distance.
 
 ### SNAP Datasets
 
