@@ -33,7 +33,7 @@ Supported graph sources:
 SNAP datasets are expected under:
 
 ```bash
-/home/cwang922/Project/CS787/data/snap/
+data/snap/
 ```
 
 Both `.txt` and `.txt.gz` files are supported. Using `.txt.gz` directly is recommended; decompression is not required.
@@ -41,7 +41,6 @@ Both `.txt` and `.txt.gz` files are supported. Using `.txt.gz` directly is recom
 Download commands:
 
 ```bash
-cd /home/cwang922/Project/CS787
 mkdir -p data/snap
 
 wget -P data/snap https://snap.stanford.edu/data/ca-GrQc.txt.gz
@@ -138,7 +137,7 @@ Directory summary:
 Run all commands from the script directory:
 
 ```bash
-cd /home/cwang922/Project/CS787/priority_queue_project
+cd priority_queue_project
 ```
 
 The default Python environment is the existing micromamba environment `bot`:
