@@ -28,7 +28,55 @@ Supported graph sources:
 - SNAP `roadNet-CA`
 - C++-only decrease-key stress graphs
 
-## 2. Data Download and Placement
+## 2. Requirements and Environment
+
+The project is designed to run with the existing micromamba environment named `bot`.
+
+Check available environments:
+
+```bash
+micromamba env list
+```
+
+If `bot` already exists, use it directly:
+
+```bash
+micromamba activate bot
+```
+
+If `bot` does not exist, create it with:
+
+```bash
+micromamba create -n bot python=3.10 pandas matplotlib -y
+micromamba activate bot
+```
+
+Python requirements:
+
+- Python 3.10 or newer
+- Standard library modules
+- `pandas` for optional/result analysis workflows
+- `matplotlib` is optional and only needed if plotting is added
+
+C++ requirements:
+
+- A C++17 compiler such as `g++`
+- `make`
+- `gzip` command-line tool for reading `.txt.gz` SNAP files in the C++ runner
+
+The command wrapper uses this environment by default:
+
+```bash
+MAMBA_ENV=bot
+```
+
+You can override it for one command:
+
+```bash
+MAMBA_ENV=some_other_env bash command.sh syn
+```
+
+## 3. Data Download and Placement
 
 SNAP datasets are expected under:
 
@@ -71,7 +119,7 @@ Meaning:
 - `SNAP_MAX_VERTICES=`: do not impose a vertex limit.
 - `SNAP_USE_LARGEST_COMPONENT=1`: run experiments on the largest connected component after loading.
 
-## 3. Project Structure
+## 4. Project Structure
 
 ```text
 CS787/
@@ -132,7 +180,7 @@ Directory summary:
 - `data/snap/`: SNAP dataset files.
 - `results/`: CSV output files.
 
-## 4. `command.sh` Modes
+## 5. `command.sh` Modes
 
 Run all commands from the script directory:
 
@@ -254,7 +302,7 @@ roadNet-CA
 cpp
 ```
 
-## 5. Datasets, Data Structures, and Algorithms
+## 6. Datasets, Data Structures, and Algorithms
 
 ### Synthetic Datasets
 
@@ -357,7 +405,7 @@ Prim:
 - If the graph is disconnected, computes the MST for the connected component containing the start vertex.
 - SNAP experiments default to the largest connected component, so Prim usually covers the entire experimental graph.
 
-## 6. Evaluation Metrics
+## 7. Evaluation Metrics
 
 ### Python Graph Metrics
 
